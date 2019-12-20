@@ -4,7 +4,9 @@ import glob
 import pickle
 import matplotlib.pyplot as plt
 from os import path
-
+import os
+bs = str(os.environ["BASEPATH"])
+print("The base path is"+ str(bs))
 
 def calibrate_camera(nx, ny, basepath):
 
@@ -47,7 +49,7 @@ def calibrate_camera(nx, ny, basepath):
     dist_pickle = {}
     dist_pickle["mtx"] = mtx
     dist_pickle["dist"] = dist
-    destnation = path.join('./model/calibration_pickle.p')
+    destnation = str(bs)+'/model/calibration_pickle.p'
     pickle.dump( dist_pickle, open( destnation, "wb" ) )
     print("calibration data is written into: {}".format(destnation))
 

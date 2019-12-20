@@ -1,17 +1,12 @@
-"""Departure Warning System with a Monocular Camera"""
-
-__author__ = "Junsheng Fu"
-__email__ = "junsheng.fu@yahoo.com"
-__date__ = "March 2017"
-
-
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
 from timeit import default_timer as timer
 from calibration import load_calibration
 from copy import copy
-
+import os
+basepath = str(os.environ["BASEPATH"])
+print("The base path is"+ str(basepath))
 
 class Lane():
     def __init__(self):
@@ -79,7 +74,7 @@ M_b = cv2.getPerspectiveTransform(src_, dst_)
 s_thresh, sx_thresh, dir_thresh, m_thresh, r_thresh = (120, 255), (20, 100), (0.7, 1.3), (30, 100), (200, 255)
 
 # load the calibration
-calib_file = 'calibration_pickle.p'
+calib_file = basepath+'/model/calibration_pickle.p'
 mtx, dist = load_calibration(calib_file)
 
 

@@ -1,14 +1,12 @@
-#! /usr/env/python3 
+#! /usr/bin/env python3 
+
 import os 
-# Processes: [
-#  ["Process name", "path_to_start"]
-# ]
+basepath = str(os.environ["BASEPATH"])
+print("The base path is"+ str(basepath))
 processes = [
-    ["model","./model/main.py"]
+    ["model",basepath+"/model/main.py"]
 ]
 
-
-
 for i in processes:
-    print("Starting process {}".format(i[0]))
-    os.system("python3 "+str(i[1]))
+    print("started process {}".format(i[0]))
+    os.system(i[1])
