@@ -1,7 +1,20 @@
 #! /usr/bin/env python3 
 
 import os 
+import time 
+import zmq
 basepath = str(os.environ["BASEPATH"])
+
+def engager():
+	engageport = 8000
+	context = zmq.Context()
+	socket = context.socket(zmq.REQ)
+	socket.connect("tcp://localhost:8000")
+	while True:
+		socket.send(b"engaged")
+		time.sleep(1)
+		socket.recv()
+	pass
 print("The base path is"+ str(basepath))
 # Add the following process here
 dprocesses = [
@@ -12,6 +25,9 @@ dprocesses = [
 for i in dprocesses:
     print("started process {}".format(i[0]))
     os.system(i[1])
+
+
+engager()
 
 # This above is starting the processes after each other 
 # TODO: Engage processes when car is driving and not just standing
