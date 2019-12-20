@@ -3,7 +3,7 @@ import os
 import zmq 
 
 
-def MessangerServer(port):
+def MessengerServer(port):
 	context = zmq.Context()
 	socket = context.socket(zmq.REP)
 	socket.bind("tcp://*:"+str(port))
@@ -18,6 +18,6 @@ def recieve(socket):
 	return message
 
 def send(socket, message):
-	socket.send(message)
+	socket.send_string(message)
 	pass 
 
