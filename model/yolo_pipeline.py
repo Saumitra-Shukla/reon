@@ -5,12 +5,13 @@ from timeit import default_timer as timer
 # import time
 # import matplotlib.pyplot as plt
 from visualizations import *
-
+import os
+BASEPATH = os.environ["BASEPATH"]
 class yolo_tf:
     w_img = 1280
     h_img = 720
 
-    weights_file = 'weights/YOLO_small.ckpt'
+    weights_file ='./weights/YOLO_small.ckpt'
     alpha = 0.1
     threshold = 0.3
     iou_threshold = 0.5

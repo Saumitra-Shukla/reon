@@ -1,9 +1,3 @@
-"""calibration.py: Calibration the cameras and save the calibration results."""
-
-__author__ = "Junsheng Fu"
-__email__ = "junsheng.fu@yahoo.com"
-__date__ = "March 2017"
-
 import numpy as np
 import cv2
 import glob
@@ -13,13 +7,6 @@ from os import path
 
 
 def calibrate_camera(nx, ny, basepath):
-    """
-
-    :param nx: number of grids in x axis
-    :param ny: number of grids in y axis
-    :param basepath: path contains the calibration images
-    :return: write calibration file into basepath as calibration_pickle.p
-    """
 
     objp = np.zeros((nx*ny,3), np.float32)
     objp[:,:2] = np.mgrid[0:nx,0:ny].T.reshape(-1,2)
@@ -60,7 +47,7 @@ def calibrate_camera(nx, ny, basepath):
     dist_pickle = {}
     dist_pickle["mtx"] = mtx
     dist_pickle["dist"] = dist
-    destnation = path.join(basepath,'calibration_pickle.p')
+    destnation = path.join('./model/calibration_pickle.p')
     pickle.dump( dist_pickle, open( destnation, "wb" ) )
     print("calibration data is written into: {}".format(destnation))
 
