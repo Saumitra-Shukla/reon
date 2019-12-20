@@ -1,5 +1,4 @@
 #! /usr/bin/env python3 
-
 import os 
 import time 
 import zmq
@@ -16,6 +15,7 @@ def engager():
 		socket.recv()
 	pass
 print("The base path is"+ str(basepath))
+# TODO: This need to move into planner. See more line 30
 # Add the following process here
 dprocesses = [
     ["model",basepath+"/model/main.py"]
@@ -27,7 +27,9 @@ for i in dprocesses:
     os.system(i[1])
 
 
+# This function should the planner trigger and planner triggers the model 
 engager()
+
 
 # This above is starting the processes after each other 
 # TODO: Engage processes when car is driving and not just standing
