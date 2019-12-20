@@ -3,11 +3,13 @@
 import os 
 basepath = str(os.environ["BASEPATH"])
 print("The base path is"+ str(basepath))
-processes = [
+# Add the following process here
+dprocesses = [
     ["model",basepath+"/model/main.py"]
 ]
+# Dprocesses stand for driving processes
 
-for i in processes:
+for i in dprocesses:
     print("started process {}".format(i[0]))
     os.system(i[1])
 
