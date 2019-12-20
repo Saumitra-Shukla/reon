@@ -12,14 +12,14 @@ def pipeline_yolo(img):
     return output
 
 
-cap = cv2.VideoCapture(basepath+'/model/example_data/project_video.mp4')
+cap = cv2.VideoCapture(basepath+'/curve.hevc')
 print(cap)
-while(cap.isOpened()):
+while (cv2.waitKey(1) != ord('q')):
     ret, frame = cap.read()
+    
+    frame = cv2.resize(frame,(1280,720))
     yolo_result = pipeline_yolo(frame)
     cv2.imshow('frame',yolo_result)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
+    
 cap.release()
 cv2.destroyAllWindows()

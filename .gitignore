@@ -1,2 +1,3 @@
 model/weights/*
 model/example_data/*
+*.mp4
