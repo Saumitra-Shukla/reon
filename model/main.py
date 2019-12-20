@@ -12,7 +12,7 @@ def pipeline_yolo(img):
     return output
 
 
-cap = cv2.VideoCapture(basepath+'/curve.hevc')
+cap = cv2.VideoCapture(basepath+'/model/example_data/project_video.mp4')
 print(cap)
 while (cv2.waitKey(1) != ord('q')):
     ret, frame = cap.read()
