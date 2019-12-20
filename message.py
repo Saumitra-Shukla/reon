@@ -1,5 +1,8 @@
+# Import this to use ZMQ messaging
 import os 
 import zmq 
+
+
 def MessangerServer(port):
 	context = zmq.Context()
 	socket = context.socket(zmq.REP)
