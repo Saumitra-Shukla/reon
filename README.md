@@ -1,6 +1,9 @@
-TODO list for REON
+REON
 ================
-
+Keep in mind the master branch(this) is the develpment branch, as soon as a working release is there, there will be a always working release branch
+## System design
+<center><img src="illustrations.jpg"></img><center>
+## TODO
 * Manager (Basic functionality is already given)
 * Update and lauch mechanics. Remember we are changing the standard openpilt code out with the REON one. This means we can install packages in lauch_openpilot.sh and check if they are on the newest possible version. 
 * Messeging: We have to choose something like ZMQ 
