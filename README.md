@@ -3,16 +3,17 @@ REON
 Keep in mind the master branch(this) is the develpment branch, as soon as a working release is there, there will be a always working release branch
 ## System design
 <center><img src="illustrations.jpg"></img><center>
-## TODO
+ <h1>TODO</h1>
+
 * Manager (Basic functionality is already given)
 * Update and lauch mechanics. Remember we are changing the standard openpilt code out with the REON one. This means we can install packages in lauch_openpilot.sh and check if they are on the newest possible version. 
 * Messeging: We have to choose something like ZMQ 
 * Write a logger. Video and the model answer data needs to be logged
 * Further development on the model, currently yolo_small is used. Tracking and detection performance should always be imporved and it should be as good as possible for auto lane changes. Keep in mind, this is not the development of a product, this code is in its alpha version and should only be used for educational purposes only.
 *
-## Contribution 
+<h1>Contribution</h1>
 Please make comments. Please make clear function and variable names, so that everyone can understand what they are doing. Additionally make sure that the code compiles or runs on every operating system, this means linux, mac and android. No one cares about Windows, but it is a nice feature if it would run on there too. 
-## Things you can try out on your EON right now
+<h1>Things you can try out on your EON right now</h1>
  * Try to install opencv-python as quickly and as nicely as possible 
 
  
